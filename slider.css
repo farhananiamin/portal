@@ -1,0 +1,35 @@
+/* Horizontal scroll container */
+.hotel-slider {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;          /* Enables horizontal scrollbar */
+    scroll-behavior: smooth;
+    padding-bottom: 15px;
+}
+
+/* Hide vertical scroll */
+.hotel-slider::-webkit-scrollbar {
+    height: 10px;
+}
+
+/* Scrollbar track */
+.hotel-slider::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb */
+.hotel-slider::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.hotel-slider::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+}
+
+/* Hotel cards fixed width (important) */
+.hotel-card {
+    min-width: 280px;          /* Controls card size */
+    flex-shrink: 0;            /* Prevents shrinking */
+}

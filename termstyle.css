@@ -1,0 +1,346 @@
+.about-hero {
+    text-align: center;
+    padding: 100px 20px 80px;
+    color: white;
+}
+
+.about-container {
+background: white;
+padding: 60px 20px;
+border-top-left-radius: 40px;
+border-top-right-radius: 40px;
+margin-top: -40px;
+}
+
+.about-grid {
+    max-width: 1500px;
+    margin: 0 auto 50px auto;
+    background: #ffffff;
+    padding: 60px; 
+    border-radius: 50px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    display: block; 
+}
+
+
+
+.inner-border-box {
+    border: 2px solid #000000;
+    padding: 40px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background: #ffffff; 
+}
+
+
+.about-text h2 {
+    color: #000;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: 'Times New Roman', serif; 
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin: 0;
+}
+
+
+/* --- LAYOUT LOGIC --- */
+
+.faq-layout-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Space between FAQ and Image */
+}
+
+/* FAQ Container - Now Left Aligned */
+.faq-container {
+    flex: 1; 
+    max-width: 650px;
+    margin: 0; /* Ensures it stays left */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.faq-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* --- IMAGE & HOVER EFFECT --- */
+
+.faq-image-side {
+    flex: 0 0 400px; /* Fixes image width at 400px */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.faq-hover-image {
+    width: 520px;       
+    border-radius: 30px;        
+    border: 2px solid #000000;  
+    padding: 10px;              
+    background: #ffffff;        
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Hover Effect - Keep this so it still floats! */
+.faq-hover-image:hover {
+    transform: scale(1.05) translateY(-15px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-color: #4299e1;      /* Optional: border turns blue on hover */
+}
+/* --- SEARCH & ACCORDION STYLES --- */
+
+#faqSearch {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.faq-list {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 15px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item summary::after {
+    content: '+';
+    color: #4299e1;
+    font-size: 1.2rem;
+}
+
+.content {
+    padding: 15px 20px;
+    background-color: #f9fafb;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+mark {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0 2px;
+}
+
+@media (max-width: 1000px) {
+    .faq-layout-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .faq-image-side {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        order: -1; /* Image moves to top on mobile */
+        margin-bottom: 30px;
+    }
+}
+
+#myBtn {
+    background-color: #ddc7fc;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  #myBtn:hover {
+    background-color: white;
+    transform: scale(1.05);
+  }
+
+  /* 2. THE POP-UP OVERLAY (The dark background) */
+  .modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darkens the screen */
+    backdrop-filter: blur(5px); /* Blurs the background */
+  }
+
+  /* 3. THE POP-UP BOX (The "Smaller Page") */
+  .modal-box {
+    background-color: white;
+    margin: 10vh auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* 4. FORM ELEMENTS */
+  .modal-box h2 { margin-top: 0; color: #333; }
+  .modal-box p { color: #666; font-size: 14px; }
+  
+  .input-group { margin-bottom: 15px; text-align: left; }
+  .input-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+
+  .modal-box input, .modal-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box; /* Crucial for layout */
+  }
+
+  .submit-details {
+    background-color: #ddc7fc;
+    color: black;
+    border: 2px solid black;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .close-x {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+  }
+
+/* --- Your Original Styles --- */
+.support-container { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.support-card { background: #ffffff; border-radius: 16px; padding: 16px 24px; display: flex; align-items: center; border: 1px solid #eef0f2; text-decoration: none; }
+.icon-section { font-size: 24px; margin-right: 20px; color: #333; }
+.text-section { flex-grow: 1; text-align: left; }
+.text-section h3 { margin: 0; font-size: 16px; color: #1a1a1a; font-weight: 600; }
+.text-section p { margin: 4px 0 0; font-size: 13px; color: #666; }
+
+.action-btn { background-color: #e1f5fe; color: #01579b; padding: 10px 20px; border-radius: 20px; font-weight: 600; cursor: pointer; }
+
+/* --- Pop-up Logic --- */
+.modal-toggle { display: none; }
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5); display: none;
+  justify-content: center; align-items: center; z-index: 9999;
+}
+.modal-toggle:checked ~ .modal-overlay { display: flex; }
+
+/* --- Inside the Pop-up --- */
+.modal-content {
+  background: white; width: 90%; max-width: 450px;
+  padding: 25px; border-radius: 24px; position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.internal-list {
+  display: flex; flex-direction: column; gap: 10px; margin-top: 20px;
+}
+
+/* Styles the cards inside the popup to be slightly smaller */
+.mini-card {
+  padding: 12px 15px; border: 1px solid #eee; transition: background 0.2s;
+}
+.mini-card:hover { background: #f8fbff; border-color: #01579b; }
+
+.close-x { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
+
+.modal-header h3 { margin: 0; font-size: 20px; }
+.modal-header p { font-size: 14px; color: #666; margin: 5px 0; }
+
+.modal-footer { margin-top: 20px; text-align: center; }
+.browse-guest { color: #01579b; font-weight: bold; cursor: pointer; font-size: 14px; }
+
+
+/* Styling for the copyable email input */
+.copy-input {
+  border: none;
+  background: transparent;
+  color: #007bff;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin-top: 4px;
+}
+
+/* Optional: change color when the text is selected */
+.copy-input::selection {
+  background: #007bff;
+  color: white;
+}
+
+/* Ensure the mini-card behaves like a button */
+.copy-row {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copy-row:hover {
+  background-color: #f8f9fa;
+}
+
+/* Crucial: Ensure the modal logic works for the new ID */
+#email-trigger {
+  display: none;
+}
+
+#email-trigger:checked ~ .modal-overlay {
+  display: flex; /* Or however your modal-toggle CSS is set to show */
+  opacity: 1;
+  visibility: visible;
+}
+
+/*back to top*/
+
+#backToTop {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #540b54;
+color: white;
+padding: 12px 18px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: bold;
+z-index: 1000;
+}
+
+
+

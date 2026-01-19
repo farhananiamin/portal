@@ -1,0 +1,145 @@
+
+body {
+background-color: #260656;
+margin: 0;
+font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.about-hero {
+text-align: center;
+padding: 100px 20px 80px;
+color: white;
+}
+
+.about-container {
+background: white;
+padding: 60px 20px;
+border-top-left-radius: 40px;
+border-top-right-radius: 40px;
+margin-top: -40px;
+}
+
+.about-grid {
+max-width: 1000px;
+margin: 0 auto 50px auto;
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 50px;
+align-items: center;
+background: #ffffff;
+padding: 30px;
+border-radius: 30px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+
+.about-grid-reverse {
+max-width: 1000px;
+margin: 0 auto 50px auto;
+display: grid;
+grid-template-columns: 1.2fr 1fr; /* Text gets more space, then Image */
+gap: 50px;
+align-items: center;
+background: #ffffff;
+padding: 30px;
+border-radius: 30px;
+ box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-grid-reverse .about-image {
+order: 2;
+}
+.about-grid-reverse .about-text {
+order: 1;
+}
+
+
+
+.about-image img {
+width: 100%;
+border-radius: 20px;
+box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+}
+
+.about-image img:hover {
+transform: translateY(-12px);
+box-shadow: 0 25px 50px rgba(38, 6, 86, 0.2);
+}
+
+.value-box {
+margin-top: 20px;
+padding: 20px;
+background: #f4f7fe;
+border-radius: 15px;
+border-left: 5px solid #260656;
+}
+
+.objectives-ol {
+max-width: 1100px;
+margin: 50px auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr); 
+gap: 25px;
+padding: 0;
+list-style-position: inside;
+}
+
+.obj-li-card {
+background: #ffffff;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+border-top: 5px solid #260656;
+transition: transform 0.3s ease;
+display: list-item;
+}
+
+.obj-li-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 30px rgba(38, 6, 86, 0.15);
+}
+
+.obj-li-card::marker {
+color: #260656;
+font-weight: bold;
+font-size: 20px;
+}
+
+.obj-li-card strong {
+display: block;
+color: #260656;
+font-size: 18px;
+margin-bottom: 15px;
+margin-top: 5px;
+}
+
+.obj-li-card p {
+color: #555;
+font-size: 14px;
+line-height: 1.6;
+text-align: justify;
+margin: 0;
+}
+
+@media (max-width: 900px) {
+.objectives-ol { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+.objectives-ol { grid-template-columns: 1fr; }
+}
+
+/*back to top*/
+
+#backToTop {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #540b54;
+color: white;
+padding: 12px 18px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: bold;
+z-index: 1000;
+}

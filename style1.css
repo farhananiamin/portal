@@ -1,0 +1,236 @@
+/*background website*/
+
+body{
+  background-color:#260656;
+}
+
+/*half image*/
+
+.image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.full-image {
+    width: 100%; 
+    max-width: 1600px; 
+    height: 500px;
+    
+    margin-top: -50px; 
+    
+
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    
+    object-fit: cover; 
+}
+
+/*nav bar*/
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+
+  background: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(5px); 
+  padding: 15px 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-auth {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Gaya Nama Brand */
+.brand-name {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Cantumkan Language + Links + Auth di sebelah kanan */
+.nav-right-side {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Jarak antara setiap bahagian */
+}
+
+/* Gaya Language Picker (Bendera) */
+.language-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.language-picker img {
+  border-radius: 2px;
+  width: 20px;
+}
+
+/* Pastikan nav-links tidak ada bullet points */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/*bar nav 2*/
+
+.service-menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Rahsia untuk bagi dia terapung atas gambar */
+    z-index: 10;
+    margin-top: -350px; /* Adjust nilai ni supaya dia duduk atas imej anda */
+}
+
+.service-menu {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1); /* Lutsinar sikit */
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Gaya untuk item yang dipilih (macam butang Putih Hotels tu) */
+.service-item.active {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.service-item:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+}
+
+/*footer*/
+
+.main-footer {
+    background-color: #1c2c34; 
+    color: white;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+.payment-grid img {
+    width: 100%;
+    filter: grayscale(100%); 
+}
+
+.footer-logo-wrapper {
+    margin-bottom: 10px; 
+}
+
+.footer-main-logo {
+    width: 60px;         
+    height: auto;
+    display: block;     
+}

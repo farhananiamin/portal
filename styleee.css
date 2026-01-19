@@ -1,0 +1,653 @@
+/*background website*/
+
+body{
+  background-color:#260656;
+}
+
+/*half image*/
+
+.image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.full-image {
+    width: 100%; 
+    max-width: 1600px; 
+    height: 500px;
+    
+    margin-top: -50px; 
+    
+
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    
+    object-fit: cover; 
+}
+
+/*nav bar*/
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+
+  background: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(5px); 
+  padding: 15px 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-auth .btn-login {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-login:hover {background-color: #e1bee7}
+
+
+/* Gaya Nama Brand */
+.brand-name {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Cantumkan Language + Links + Auth di sebelah kanan */
+.nav-right-side {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Jarak antara setiap bahagian */
+}
+
+/* Gaya Language Picker (Bendera) */
+.language-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.language-picker img {
+  border-radius: 2px;
+  width: 20px;
+}
+
+/* Pastikan nav-links tidak ada bullet points */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/*bar nav 2*/
+
+.hero-content-wrapper {
+    position: absolute;
+    top: 200px; /* Adjust nilai ini untuk naikkan/turunkan keseluruhan bar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Jarak antara bar servis dan kotak putih */
+    z-index: 100;
+    text-align: center;
+}
+
+.hero-slogan {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.hero-slogannn {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.service-item {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-main-box {
+    background: white;
+    display: flex;
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    align-items: center;
+    width: 100%;
+}
+
+/* Coding Kotak Putih */
+.search-main-container {
+    width: 100%;
+}
+
+.search-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.tab {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.search-bar-white {
+    background: white;
+    display: flex;
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section label {
+    font-size: 11px;
+    color: #687176;
+    font-weight: bold;
+}
+
+.input-section input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.purple-search-btn {
+    background: #ce93d8;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/*login*/
+
+/* Background Gambar Penuh */
+.login-page-bg {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('gambar-travel.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Kotak Login Terapung */
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.login-header h2 {
+    color: #ba68c8;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.login-header p {
+    color: #ba68c8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Gaya Input */
+.input-group {
+    background: #f1f3f5;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.forgot-pass {
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.forgot-pass a {
+    font-size: 12px;
+    color: #ba68c8;
+    text-decoration: none;
+}
+
+/* Butang Login */
+.login-btn-full {
+    width: 100%;
+    background: #ce93d8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn-full:hover {
+    background: #e1bee7;
+}
+
+/* Social Login */
+.or-separator {
+    margin: 20px 0;
+    color: #888;
+    font-size: 12px;
+}
+
+.google-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.google-btn img {
+    width: 20px;   /* Kau boleh tukar nilai ni (18px - 22px paling ngam) */
+    height: auto;  /* Biar dia ikut nisbah gambar yang betul */
+    object-fit: contain;
+}
+
+.login-footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #687176;
+}
+
+.login-footer a {
+    color: #ba68c8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*create account*/
+
+/* Guna background yang sama atau gambar lain bertema Travel */
+.register-page-bg {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('gambar-register.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.register-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px; /* Lebar sikit dari login sebab ada phone code */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.register-header h2 {
+    color: #ba68c8;
+    margin-bottom: 8px;
+}
+
+/* Style untuk Input Phone Number dengan kod negara */
+.country-code {
+    font-weight: bold;
+    color: #333;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.register-btn-full {
+    width: 100%;
+    background: #ce93d8; /* Guna biru pulak untuk bezakan dengan login */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn-full:hover {
+    background: #ce93d8;
+}
+
+.register-footer a {
+    color: #ba68c8; /* Link pergi login warna oren */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*image with button destination*/
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.des-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("KL1.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.des-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.des-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.des-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+/*image with button booking*/
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.book-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("melaka1.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.book-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.book-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.book-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+
+/* DATE BOX */
+#datetime-simple {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  font-size: 15px;             
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.7); 
+  color: #ffffff;              
+  border-radius: 20px;
+  font-family: 'Quicksand', sans-serif;
+  opacity: 1;                  
+  transition: all 0.3s ease;
+  cursor: default;
+  opacity: 1;
+}
+
+/*saiz video*/
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Bagi duduk tengah secara mendatar */
+    align-items: center;     /* Bagi duduk tengah secara menegak (jika perlu) */
+    padding: 20px;           /* Jarak sikit dengan benda lain */
+    width: 100%;             /* Biar dia ambil ruang penuh skrin */
+}
+
+video {
+    max-width: 80%;          /* Video takkan lebih 80% lebar skrin (saiz sedang) */
+    height: auto;            /* Biar tinggi dia ikut nisbah video */
+    border-radius: 12px;     /* Bagi nampak kemas, bucu bulat sikit */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Tambah bayang bagi nampak timbul */
+}
+
+/* This part handles the modal background */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Dim the background */
+    align-items: center;
+    justify-content: center;
+}
+
+/* This part fixes the size for ALL phones/tablets */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    
+    /* THE KEY FOR ANY SIZE: */
+    width: 90%;          /* On tiny phones, it stays inside the edges */
+    max-width: 450px;    /* On big phones/tablets, it stops stretching at 450px */
+    
+    box-sizing: border-box; /* Keeps padding from breaking the width */
+}
+
+/* Ensure the list inside stacks nicely */
+.internal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*back to top*/
+
+#backToTop {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #540b54;
+color: white;
+padding: 12px 18px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: bold;
+z-index: 1000;
+}
+
+/*footer*/
+
+.main-footer {
+    background-color: #1c2c34; /* Warna gelap macam Traveloka */
+    color: white;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Supaya dia turun bawah kalau skrin kecil */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 200px;
+}
+
+.payment-grid img {
+    width: 100%;
+    filter: grayscale(100%); /* Biar nampak serius sikit */
+}
+.footer-logo-wrapper {
+    margin-bottom: 10px; /* Jarak antara logo dengan tulisan NovaStay */
+}
+
+.footer-main-logo {
+    width: 60px;         /* Adjust saiz ikut kesesuaian logo kau */
+    height: auto;
+    display: block;      /* Supaya dia tak bercampur dengan teks sebelah */
+}

@@ -1,0 +1,308 @@
+
+/* Global text improvements */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Section containers */
+section {
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Headings */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-left: 6px solid #ffffff;
+    padding-left: 15px;
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+/* Forms */
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    background: #000000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Hotel listing cards */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+ul li {
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Confirmation page highlight */
+section p strong {
+    color: #ffd700;
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+    section {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Card container */
+.payment-options .payment-card {
+    display: flex;
+    align-items: flex-start; 
+
+    padding: 12px 20px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+
+/* Left side: icon + text */
+.payment-options .payment-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Icon size */
+.payment-options .payment-left .icon {
+    font-size: 20px;
+}
+
+/* Radio button */
+.payment-options .payment-card input[type="radio"] {
+    margin-left: auto;
+    margin-top: 6px; 
+    flex-shrink: 0;
+
+    transform: scale(1.2);
+    accent-color: #ffd700;
+}
+
+
+/* Hover */
+.payment-options .payment-card:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Selected state */
+.payment-options .payment-card:has(input[type="radio"]:checked) {
+    background: rgba(255,255,255,0.18);
+    border: 2px solid #ffd700;
+}
+
+.payment-options
+.payment-card:has(input[type="radio"]:checked)
+.payment-left {
+    color: #ffd700;
+}
+
+
+/* Error text */
+.error-text {
+    display: none;
+    margin-top: 10px;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+#originalPrice {
+    text-decoration: line-through;
+    color: #ccc;
+    margin-left: 5px;
+}
+
+.discounted {
+    font-size: 20px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.price-summary p {
+    margin: 8px 0;
+}
+
+/* =========================
+   FINAL E-TICKET / RECEIPT
+   ========================= */
+
+.ticket {
+    max-width: 420px;
+    margin: 170px auto 50px;
+    background: #2b1658;
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    font-family: Arial, sans-serif;
+}
+
+
+.ticket-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ticket-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.ticket-status {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #3cb371;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.ticket-body {
+    margin-top: 20px;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.ticket-row span {
+    color: #d1c7ff;
+}
+
+.ticket-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+    margin: 20px 0;
+}
+
+.ticket-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.ticket-print {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: #ffd700;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ===== PRINT FRIENDLY ===== */
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .ticket {
+        box-shadow: none;
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+    }
+    nav, .navbar {
+        display: none;
+    }
+    .ticket-print {
+        display: none !important;
+    }
+}
+
