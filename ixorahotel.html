@@ -1,0 +1,219 @@
+<html>
+
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Ixora Hotel Penang</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body> 
+
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+   <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+  
+   </div>
+  </div>
+
+</div>
+
+
+</nav>
+
+ <div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script> 
+
+<div class="slideshow-container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+    <img src="ixora.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+    <img src="ixora.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+    <img src="ixora.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 4</div>
+    <img src="ixora.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption">The Woods</p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="ixora1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Hotel Exterior">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="ixora.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cozy Bedroom">
+    </div>
+
+     <div class="column">
+  <img class="demo cursor" src="ixora2.jpg" style="width:100%" onclick="currentSlide(3)" alt="Swimming Pool">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="ixora3.jpg" style="width:100%" onclick="currentSlide(4)" alt="	Hotel Entrance">
+  </div>
+</div> </div> 
+
+
+<div class="hotel-divider">
+    <span class="hotel-name">Ixora Hotel Penang</span>
+</div>
+
+
+<section class="main-content">
+    <div class="white-box">
+        <h2 class="box-title">Hotel Description</h2>
+        <div class="rating-stars">
+    <i class="fa fa-star checked"></i>
+    <i class="fa fa-star checked"></i>
+    <i class="fa fa-star checked"></i>
+    <i class="fa fa-star-o"></i>
+    <i class="fa fa-star-o"></i>
+    <span>(3.8/5)</span>
+</div>
+
+        <div class="facilities-row">
+             
+            <button class="button button1"><i class="fa fa-wifi"></i> High-Speed WiFi</button>
+            <button class="button button1"><i class="fa fa-bed"></i> King Bed</button>
+            <button class="button button1"><i class="fa fa-snowflake-o"></i> 
+Aircon</button>
+            <button class="button button1"><i class="fa fa-tint"></i> <span>Outdoor Pool</span>
+                 </div>
+        <hr class="divider">
+        <p class="box-description">
+Experience the perfect blend of business and leisure at Ixora Hotel Penang, a premier contemporary destination located in the heart of the 
+thriving Bandar Perai Jaya. Perfectly positioned for those who value both accessibility and style, our hotel offers a sophisticated urban escape with its sleek architecture and warm, inviting hospitality.   
+         <br><br>
+Each guest room is a masterclass in modern comfort, featuring spacious layouts and premium amenities designed to <em>provide a restful sanctuary after a busy day.</em> Whether you are enjoying a refreshing dip in our outdoor pool with its fun waterslide, hosting a successful event in our grand ballroom, or exploring the vibrant shopping and dining scenes just steps away, Ixora Hotel Penang provides a refined and effortless stay on mainland Penang.
+        </p>
+
+    </div>
+
+ <div class="white-box-map">
+        <h2 class="box-title">Our Location</h2>
+
+        <div class="map-wrapper">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.255820969965!2d100.3985156!3d5.3779117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac66369c18e4d%3A0x896ae51bcef980b9!2sIxora%20Hotel%20Penang!5e0!3m2!1sen!2smy!4v1768646459267!5m2!1sen!2smy"  width="100%" height="250" style="border:0;"
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="btn-click">
+        <a href="Book.html">
+        <button class="button button2">Book Now</button>
+</a>
+  
+        </div>
+
+    </div>
+</section>
+
+<footer> 
+</footer> 
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) { showSlides(slideIndex += n); }
+function currentSlide(n) { showSlides(slideIndex = n); }
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+
+</body> 
+</html> 

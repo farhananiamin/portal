@@ -1,0 +1,223 @@
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERENGGANU HOTEL</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="slider.css" />
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body> 
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+   <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+
+  
+   </div>
+  </div>
+
+</div>
+</nav>
+
+ 
+
+<div class="hero-image hero-terengganu">
+  <div class="hero-text">
+    <h1 style="font-size:80px">Terengganu</h1>
+    <p>Enjoy your journey with modern and comfortable accommodations</p>
+  </div>
+</div>
+
+<div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script> 
+
+<section class="section-center">
+  <div class="slider-container">
+    
+<div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span> 
+    <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">5-Star Luxury Hotels</small>
+  </div>
+  
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+    
+      <div class="hotel-card">
+        <img src="tanjong.jpg" alt="Tanjong Jara Resort">
+        <div class="card-info">
+          <h3>Tanjong Jara Resort</h3>
+          <p class="price">RM 849</p>
+          <p class="desc">Luxury beach resort inspired by 17th-century Malay palaces</p>
+        </div>
+        <a href="tanjongresort.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="taaras.jpg" alt="The Taaras Beach & Spa Resort">
+        <div class="card-info">
+          <h3>The Taaras Beach & Spa Resort</h3>
+          <p class="price">RM 707</p>
+          <p class="desc">Exclusive private beach resort with crystal clear waters</p>
+        </div>
+        <a href="taarashotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="duyong.jpg" alt="Duyong Marina & Resort">
+        <div class="card-info">
+          <h3>Duyong Marina & Resort</h3>
+          <p class="price">RM 156</p>
+          <p class="desc">Unique boutique resort with a beautiful riverside view</p>
+        </div>
+       <a href="duyonghotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="bubuvilla.jpg" alt="Bubu Villa">
+        <div class="card-info">
+          <h3>Bubu Villa</h3>
+          <p class="price">RM 1,824</p>
+          <p class="desc">Luxury beachfront villas located on the beautiful Perhentian Island</p>
+        </div>
+        <a href="bubuvilla.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+           </div> </div></section>
+
+<section class="section-center">
+  <div class="slider-container">
+
+ <div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span> <span class="fa fa-star"></span><</span> <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">3-Star Luxury Hotels</small>
+  </div>
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+      <div class="hotel-card">
+        <img src="sumai.jpg" alt="Sumai Hotel Apartment">
+        <div class="card-info">
+          <h3>Sumai Hotel Apartment</h3>
+          <p class="price">RM 123</p>
+          <p class="desc">Spacious beachfront apartments perfect for family vacations</p>
+        </div>
+        <a href="sumaihotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="temu.jpg" alt="Temu Primula Hotel">
+        <div class="card-info">
+          <h3>Temu Primula Hotel</h3>
+          <p class="price">RM 117</p>
+          <p class="desc">Modern and cozy hotel located near the city center</p>
+        </div>
+        <a href="temuprimulahotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+
+      </div>
+
+      <div class="hotel-card">
+        <img src="vista.jpg" alt="Hotel Tanjong Vista hotel">
+        <div class="card-info">
+          <h3>Hotel Tanjong Vista</h3>
+          <p class="price">RM 199</p>
+          <p class="desc">Comfortable stay with easy access to local attractions</p>
+        </div>
+        <a href="tanjongvistahotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="payang.jpg" alt="payang hotel">
+        <div class="card-info">
+          <h3>The Payang Hotel</h3>
+          <p class="price">RM 170</p>
+          <p class="desc">Stylish boutique hotel situated near the famous Pasar Payang</p>
+        </div>
+        <a href="payanghotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      </div> </div>
+</section>
+    
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+ 
+
+</body> 
+</html>

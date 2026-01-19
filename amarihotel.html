@@ -1,0 +1,220 @@
+<html>
+
+<head>   
+
+<title> Amari Johor Bahru</title>
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body> 
+
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+  <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+  
+   </div>
+  </div>
+
+</div>
+
+</nav>
+
+ <div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script> 
+
+<div class="slideshow-container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 4</div>
+    <img src="amari1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 4</div>
+    <img src="amari2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 4</div>
+    <img src="amari3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 4</div>
+    <img src="amari4.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption">The Woods</p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="amari1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Luxury Room">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="amari2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Infinity Pool">
+    </div>
+
+     <div class="column">
+  <img class="demo cursor" src="amari3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Luxury Dining">
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="amari4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Hotel Exterior">
+  </div>
+</div> </div> 
+
+
+<div class="hotel-divider">
+    <span class="hotel-name">Amari Johor Bahru</span>
+</div>
+
+
+<section class="main-content">
+    <div class="white-box">
+        <h2 class="box-title">Hotel Description</h2>
+        <div class="rating-stars">
+            <i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i>
+            <span>(5.0/5)</span>
+        </div>
+        <div class="facilities-row">
+            <button class="button button1"><i class="fa fa-dumbbell"></i> <span>Fitness Center</span></button>
+            <button class="button button1"><i class="fa fa-bed"></i> King Bed</button>
+            <button class="button button1"><i class="fa fa-television"></i> Smart TV</button>
+            <button class="button button1"><i class="fa fa-snowflake-o"></i> Aircon</button>
+            <button class="button button1"><i class="fa fa-tint"></i> <span>Outdoor Pool</span>
+    </button>
+        </div>
+        <hr class="divider">
+        <p class="box-description">
+           Discover the heartbeat of the city at Amari Johor Bahru. Perfectly situated in the central business district, our hotel is a gateway to the best shopping, dining, and cultural heritage of JB. .
+            <br><br>
+Featuring warm, Thai-inspired hospitality and modern, light-filled rooms, Amari is your urban oasis. Relax at the Breeze Spa after a long day of exploring, or enjoy an authentic market-style breakfast at Amaya Food Gallery. For business or leisure, Amari Johor Bahru offers a stay that is 
+            <em>as bright and vibrant as the city itself.</em>
+        </p>
+
+    </div>
+
+
+ <div class="white-box-map">
+        <h2 class="box-title">Our Location</h2>
+
+        <div class="map-wrapper">
+               <iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5175059325816!2d103.75922687496605!3d1.4631219985231292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12c4889826b7%3A0x6029532250e70c4a!2sAmari%20Johor%20Bahru!5e0!3m2!1sen!2smy!4v1768590006803!5m2!1sen!2smy" 
+width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+        </div>
+
+        <div class="btn-click">
+        <a href="Book.html">
+        <button class="button button2">Book Now</button>
+</a>
+  
+        </div>
+
+
+    </div>
+</section>
+
+
+<footer> 
+</footer> 
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) { showSlides(slideIndex += n); }
+function currentSlide(n) { showSlides(slideIndex = n); }
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+  for (i = 0; i < dots.length; i++) { dots[i].className = dots[i].className.replace(" active", ""); }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+
+</body> 
+</html>

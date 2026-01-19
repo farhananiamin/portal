@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a Trip</title>
+    <link rel="stylesheet" href="styleee.css">
+    <link rel="stylesheet" href="book.css">
+<link rel="icon" type="image/png" href="Nova icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="brand-name">
+<a href="home.html">NovaStay</a></div>
+    </div>
+</nav>
+
+<section style="margin-top:120px; padding:40px; color:white;">
+    <h2>Search & Booking</h2>
+
+    <form>
+        <label>Location</label><br>
+	<select id="stateSelect" onchange="updateHotels()">
+            <option value="">-- Select Location --</option>
+            <option value="johor">Johor</option>
+            <option value="penang">Pulau Pinang</option>
+            <option value="melaka">Melaka</option>
+            <option value="kl">Kuala Lumpur</option>
+            <option value="terengganu">Terengganu</option>
+        </select><br>
+
+<label>Select Hotel</label><br>
+<select id="hotelSelect" disabled>
+    <option value="">-- Select a hotel --</option>
+</select>
+
+<p id="noHotelsMsg" style="display:none; color:#FFD700; font-weight:bold;">
+    No hotels available for the selected location.
+</p>
+
+
+<button type="button" onclick="goToHotel()">View Hotel Details</button>
+<br><br>
+
+<label>Check-in & Check-out</label><br>
+<input type="text" id="dateRange" placeholder="Select date range">
+
+
+<button type="button" onclick="proceedToCheckout()">
+    Proceed to Checkout
+</button>
+
+</section>
+
+<script>
+const hotelsByState = {
+    johor: [
+        { name: "Renaissance Johor Bahru", file: "renaissancehotel.html", price: 486 },
+        { name: "Amari Johor Bahru", file: "amarihotel.html", price: 451 },
+        { name: "Fraser Place Puteri Harbour", file: "fraserhotel.html", price: 420 },
+        { name: "Anantara Desaru Coast", file: "anantarahotel.html", price: 950 },
+        { name: "Grand Hallmark Hotel", file: "grandhotel.html", price: 123 },
+        { name: "Prestigo Hotel", file: "prestigohotel.html", price: 139 },
+        { name: "St. Giles Southkey", file: "gileshotel.html", price: 370 },
+        { name: "Atelier Hotel Johor Bahru", file: "atelierhotel.html", price: 157 }
+    ],
+
+    melaka: [
+        { name: "DoubleTree by Hilton Melaka", file: "doubletreehotel.html", price: 642 },
+        { name: "Courtyard by Marriott Melaka", file: "courtyardhotel.html", price: 567 },
+        { name: "The Majestic Malacca", file: "majastichotel.html", price: 539 },
+        { name: "Dusit Princess Melaka", file: "dusithotel.html", price: 400 },
+        { name: "Atlantis Resiedences Melaka", file: "atlantishotel.html", price: 203 },
+        { name: "Grand Flora Hotel Melaka", file: "floragohotel.html", price: 137 },
+        { name: "Prima Hotel Melaka", file: "primahotel.html", price: 96 },
+        { name: "Casa Bonita Hotel", file: "casahotel.html", price: 94 }
+    ],
+
+    penang: [
+        { name: "Noordin Mews", file: "noordinhotel.html", price: 786 },
+        { name: "Bertam Resort & Water Park Penang", file: "bertamhotel.html", price: 380 },
+        { name: "Amari Spice Penang", file: "amarispicehotel.html", price: 387 },
+        { name: "The Light Hotel Penang", file: "lighthotel.html", price: 305 },
+        { name: "Rainbow Paradise Beach", file: "rainbowhotel.html", price: 99 },
+        { name: "Travelodge Georgetown", file: "travelodghotel.html", price: 145 },
+        { name: "ESQ Ferringhi Hotel", file: "esqhotel.html", price: 39 },
+        { name: "Ixora Hotel Penang", file: "ixorahotel.html", price: 188 }
+    ],
+
+    kl: [
+        { name: "Grand Hyatt Kuala Lumpur", file: "hyatthotel.html", price: 1836 },
+        { name: "The St. Regis Kuala Lumpur", file: "regishotel.html", price: 1229 },
+        { name: "EQ Kuala Lumpur", file: "eqhotel.html", price: 840 },
+        { name: "The Ritz-Cartlon", file: "ritzhotel.html", price: 600 },
+        { name: "Royal Chulan Damaansara", file: "royalhotel.html", price: 190 },
+        { name: "Mpalace Hotel Kl", file: "mplacehotel.html", price: 149 },
+        { name: "Empire Hotel Subang", file: "subanghotel.html", price: 210 },
+        { name: "Crsytal Crown Hotel Kuala Lumpur", file: "crystalcrownhotel.html", price: 139 }
+    ],
+
+    terengganu: [
+        { name: "Tanjong Jara Resort", file: "tanjonghotel.html", price: 849 },
+        { name: "The Taaras Beach & Spa Resort", file: "taarashotel.html", price: 707 },
+        { name: "Duyong Marina & Resort", file: "duyonghotel.html", price: 156 },
+        { name: "Bubu Villa", file: "bubuvilla.html", price: 1824 },
+        { name: "Sumai Hotel Apartment", file: "sumaihotel.html", price: 123 },
+        { name: "Temu Primula Hotel", file: "temuprimulahotel.html", price: 117 },
+        { name: "Hotel Tanjong Vista", file: "tanjongvistahotel.html", price: 199 },
+        { name: "The Payang Hotel", file: "payanghotel.html", price: 170 }
+    ]
+};
+
+function updateHotels() {
+    const state = document.getElementById("stateSelect").value;
+    const hotelSelect = document.getElementById("hotelSelect");
+    const noHotelsMsg = document.getElementById("noHotelsMsg");
+
+    // Reset
+    hotelSelect.innerHTML = '<option value="">-- Select a hotel --</option>';
+    hotelSelect.disabled = true;
+    noHotelsMsg.style.display = "none";
+
+    if (!state) return;
+
+    const hotels = hotelsByState[state];
+
+    if (!hotels || hotels.length === 0) {
+        noHotelsMsg.style.display = "block";
+        return;
+    }
+
+    hotels.forEach(hotel => {
+const option = document.createElement("option");
+option.value = hotel.file;
+option.textContent = hotel.name;
+option.setAttribute("data-price", hotel.price);
+        hotelSelect.appendChild(option);
+    });
+
+    hotelSelect.disabled = false;
+}
+
+function goToHotel() {
+    const hotel = document.getElementById("hotelSelect").value;
+
+    if (!hotel) {
+        alert("Please select a hotel.");
+        return;
+    }
+
+    window.location.href = hotel;
+}
+
+function proceedToCheckout() {
+    const state = document.getElementById("stateSelect").value;
+    const hotelSelect = document.getElementById("hotelSelect");
+    const hotelLink = hotelSelect.value;
+    const hotelName = hotelSelect.options[hotelSelect.selectedIndex].text;
+    const dateRange = document.getElementById("dateRange").value;
+const hotelPrice =
+    hotelSelect.options[hotelSelect.selectedIndex]
+    .getAttribute("data-price");
+
+    if (!state) {
+        alert("Please select a location.");
+        return;
+    }
+
+    if (!hotelLink) {
+        alert("Please select a hotel.");
+        return;
+    }
+
+    if (!dateRange) {
+        alert("Please select check-in and check-out dates.");
+        return;
+    }
+
+    localStorage.setItem("state", state);
+    localStorage.setItem("hotelName", hotelName);
+    localStorage.setItem("hotelLink", hotelLink);
+    localStorage.setItem("dateRange", dateRange);
+    localStorage.setItem("hotelPrice", hotelPrice);
+
+    window.location.href = "checkout.html";
+}
+
+const unavailableDates = [
+    "2026-02-10",
+    "2026-02-11",
+    "2026-02-15",
+    "2026-02-20"
+];
+
+flatpickr("#dateRange", {
+    mode: "range",
+    minDate: "today",
+    disable: unavailableDates,
+    dateFormat: "Y-m-d"
+});
+
+</script>
+
+</body>
+</html>

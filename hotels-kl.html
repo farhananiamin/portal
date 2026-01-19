@@ -1,0 +1,223 @@
+<html>
+
+<head>
+<title>KUALA LUMPUR HOTEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> destination </title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="slider.css" />
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body> 
+ 
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+  <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+  
+   </div>
+  </div>
+
+</div>
+</nav>
+
+
+<div class="hero-image hero-kl">
+  <div class="hero-text">
+    <h1 style="font-size:80px">Kuala Lumpur</h1>
+    <p>Enjoy your journey with modern and comfortable accommodations</p>
+  </div>
+</div>
+
+
+ <div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script> 
+
+
+<section class="section-center">
+  <div class="slider-container">
+
+<div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span> 
+    <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">5-Star Luxury Hotels</small>
+  </div>
+  
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+    
+      <div class="hotel-card">
+        <img src="hyatt.jpg" alt="Grand Hyatt">
+        <div class="card-info">
+          <h3>Grand Hyatt Kuala Lumpur</h3>
+          <p class="price">RM 1,836</p>
+          <p class="desc">Luxury stay with iconic views of the Petronas Twin Towers</p>
+        </div>
+        <a href="hyatthotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="Regis.jpg" alt="St. Regis">
+        <div class="card-info">
+          <h3>The St. Regis Kuala Lumpur</h3>
+          <p class="price">RM 1,229</p>
+          <p class="desc">Elegant rooms featuring world-class service and elite comfort</p>
+        </div>
+        <a href="regishotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="eq.jpg" alt="eq hotel">
+        <div class="card-info">
+          <h3>EQ Kuala Lumpur</h3>
+          <p class="price">RM 840</p>
+          <p class="desc">Award-winning contemporary hotel in the heart of the city</p>
+        </div>
+        <a href="eqhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="Ritz.jpg" alt="Ritz-Carlton hotel">
+        <div class="card-info">
+          <h3>The Ritz-Cartlon</h3>
+          <p class="price">RM 600</p>
+          <p class="desc">Sophisticated luxury suites with exceptional personalized service</p>
+        </div>
+        <a href="ritzhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+           </div> </div> </section>
+
+<section class="section-center">
+  <div class="slider-container">
+
+ <div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span> <span class="fa fa-star"></span><small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;text:a;ign:center;">3-Star Luxury Hotels</small>
+  </div>
+
+    
+    <div class="hotel-slider" id="hotelContainer">
+      
+      <div class="hotel-card">
+        <img src="royal.jpg" alt="royal chulan">
+        <div class="card-info">
+          <h3>Royal Chulan Damansara</h3>
+          <p class="price">RM 190</p>
+          <p class="desc">Comfortable rooms located next to major shopping malls</p>
+        </div>
+        <a href="royalhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="mpalace.jpg" alt="mplace hotel">
+        <div class="card-info">
+          <h3>Mpalace Hotel KL </h3>
+          <p class="price">RM 149</p>
+          <p class="desc">Spacious suites with direct access to shopping and fun</p>
+        </div>
+        <a href="mpalacehotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="subang1.jpg" alt="subang hotel">
+        <div class="card-info">
+          <h3>Empire Hotel Subang</h3>
+          <p class="price">RM 210</p>
+          <p class="desc">Stylish and cozy rooms perfect for a quick city break</p>
+        </div>
+        <a href="subanghotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="crystal.jpg" alt="crystal hotel">
+        <div class="card-info">
+          <h3>Crsytal Crown Hotel Kuala Lumpur</h3>
+          <p class="price">RM 139</p>
+          <p class="desc">Classic hospitality with clean and affordable accommodations</p>
+        </div>
+        <a href="crystalcrownhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      </div>
+    </div></section>
+
+
+    
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer> 
+
+</body> 
+</html>

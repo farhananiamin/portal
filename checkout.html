@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styleee.css">
+    <link rel="stylesheet" href="book.css">
+<link rel="icon" type="image/png" href="Nova icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="brand-name">
+<a href="home.html">NovaStay</a></div>
+    </div>
+</nav>
+
+<section style="margin-top:120px; padding:40px; color:white;">
+    <h2>Booking Details & Checkout</h2>
+
+<h3>Booking Summary</h3>
+
+<p><strong>Location:</strong> <span id="summaryState"></span></p>
+<p><strong>Hotel:</strong> <span id="summaryHotel"></span></p>
+<p><strong>Dates:</strong> <span id="summaryDates"></span></p>
+
+<h3>Payment Method</h3>
+
+<div class="payment-options">
+
+<label class="payment-card">
+<div class="payment-left">
+<span class="icon">💳</span>
+<span class="text">Credit / Debit Card</span>
+</div>
+<input type="radio" name="paymentMethod" value="Credit / Debit Card">
+</label>
+
+<label class="payment-card">
+<div class="payment-left">
+<span class="icon">🏦</span>
+<span class="text">Online Banking</span>
+</div>
+<input type="radio" name="paymentMethod" value="Online Banking">
+</label>
+
+<label class="payment-card">
+<div class="payment-left">
+<span class="icon">📱</span>
+<span class="text">E-Wallet</span>
+</div>
+<input type="radio" name="paymentMethod" value="E-Wallet">
+</label>
+
+</div>
+
+<p id="paymentError" class="error-text">
+    Please select a payment method.
+</p>
+<br>
+
+<h3>Promo Code</h3>
+<input type="text" id="promoCode" placeholder="Enter promo code">
+
+<button type="button" onclick="applyPromo()">Apply</button>
+
+<p id="promoMessage" style="font-weight:bold;"></p>
+
+<div class="price-summary">
+<p>
+  <strong>Room Price:</strong> RM
+  <span id="roomPrice"></span> / night
+</p>
+
+<p>
+    <strong>Number of Nights:</strong>
+    <span id="nightCount"></span>
+</p>
+
+<p>
+    <strong>Total Price:</strong>
+    RM <span id="originalPrice"></span>
+</p>
+
+<p class="discounted">
+    <strong>Final Price:</strong>
+    RM <span id="totalPrice"></span>
+</p>
+</div>
+
+<button type="button" onclick="confirmPayment()">
+    Confirm & Pay
+</button>
+
+
+<script>
+let promoApplied = false;
+
+const state = localStorage.getItem("state");
+const hotelName = localStorage.getItem("hotelName");
+const dateRange = localStorage.getItem("dateRange");
+const promoCodes = {
+    "NOVA10": 0.10,      // 10% discount
+    "WELCOME15": 0.15,  // 15% discount
+    "STUDENT20": 0.20   // 20% discount
+};
+
+if (!state || !hotelName || !dateRange) {
+    alert("Booking information missing. Please start again.");
+    window.location.href = "book.html";
+}
+
+document.getElementById("summaryState").textContent = state.toUpperCase();
+document.getElementById("summaryHotel").textContent = hotelName;
+document.getElementById("summaryDates").textContent = dateRange;
+
+function getSelectedPayment() {
+    const methods = document.getElementsByName("paymentMethod");
+
+    for (let method of methods) {
+        if (method.checked) {
+            return method.value;
+        }
+    }
+    return null;
+}
+
+const pricePerNight = parseFloat(localStorage.getItem("hotelPrice"));
+document.getElementById("roomPrice").textContent =
+    pricePerNight.toFixed(2);
+
+// Parse date range
+let dates;
+
+if (dateRange.includes(" to ")) {
+    dates = dateRange.split(" to ");
+} else if (dateRange.includes(",")) {
+    dates = dateRange.split(",");
+} else if (dateRange.includes(" - ")) {
+    dates = dateRange.split(" - ");
+} else {
+    alert("Invalid date format.");
+    window.location.href = "book.html";
+}
+
+const checkInDate = new Date(dates[0]);
+const checkOutDate = new Date(dates[1]);
+
+const nights = Math.max(
+    1,
+    Math.round((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24))
+);
+
+document.getElementById("nightCount").textContent = nights;
+
+let totalPrice = nights * pricePerNight;
+document.getElementById("totalPrice").textContent =
+    totalPrice.toFixed(2);
+
+document.getElementById("originalPrice").textContent =
+    totalPrice.toFixed(2);
+
+let discountedTotal = totalPrice; // default = no discount
+
+function applyPromo() {
+    if (promoApplied) {
+        return; // stop multiple applications
+    }
+
+    const input = document
+        .getElementById("promoCode")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const message = document.getElementById("promoMessage");
+
+    if (!promoCodes[input]) {
+        message.textContent = "Invalid promo code.";
+        message.style.color = "red";
+        return;
+    }
+
+    const discount = promoCodes[input];
+    discountedTotal = totalPrice - (totalPrice * discount);
+
+    // Update price display
+    document.getElementById("totalPrice").textContent =
+        discountedTotal.toFixed(2);
+
+    // Disable further promo usage
+    promoApplied = true;
+    document.getElementById("promoCode").disabled = true;
+    document.querySelector("button[onclick='applyPromo()']").disabled = true;
+
+    message.textContent =
+        `Promo applied: ${discount * 100}% OFF`;
+    message.style.color = "lightgreen";
+}
+
+function confirmPayment() {
+    const methods = document.getElementsByName("paymentMethod");
+    let selectedMethod = null;
+
+    for (let method of methods) {
+        if (method.checked) {
+            selectedMethod = method.value;
+            break;
+        }
+    }
+
+    // Validation
+    if (!selectedMethod) {
+        document.getElementById("paymentError").style.display = "block";
+        return;
+    }
+
+    // Save payment info (simulation)
+    localStorage.setItem("paymentMethod", selectedMethod);
+    localStorage.setItem("paymentStatus", "Successful");
+    localStorage.setItem("finalPrice", discountedTotal.toFixed(2));
+
+
+    // Redirect to confirmation page
+    window.location.href = "confirmation.html";
+}
+</script>
+
+</section>
+
+</body>
+</html>

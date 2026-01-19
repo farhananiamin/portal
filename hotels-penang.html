@@ -1,0 +1,217 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> PULAU PINANG HOTEL</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="slider.css" />
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+
+<body> 
+
+
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+ <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+</nav>
+
+ 
+<div class="hero-image hero-penang">
+  <div class="hero-text">
+    <h1 style="font-size:80px">Pulau Pinang</h1>
+    <p>Enjoy your journey with modern and comfortable accommodations</p>
+  </div>
+</div>
+ 
+<div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script>
+
+<section class="section-center">
+  <div class="slider-container">
+    
+<div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span> 
+   <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">5-Star Luxury Hotels</small>
+  </div>
+  
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+    
+      <div class="hotel-card">
+        <img src="noordin.jpg" alt="Noordin Mews hotel">
+        <div class="card-info">
+          <h3>Noordin Mews</h3>
+          <p class="price">RM 786</p>
+          <p class="desc">A boutique heritage hotel with a private courtyard and pool</p>
+        </div>
+        <a href="noordinhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="bertam.jpg" alt="bertam resort hotel">
+        <div class="card-info">
+          <h3>Bertam Resort & Water Park Penang</h3>
+          <p class="price">RM380</p>
+          <p class="desc">Family-oriented luxury resort with an exciting on-site water park</p>
+        </div>
+       <a href="bertamhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="amarispice.jpg" alt="amari spice hotel">
+        <div class="card-info">
+          <h3>Amari Spice Penang</h3>
+          <p class="price">RM 387</p>
+          <p class="desc">Modern business luxury connected to the world-class convention center</p>
+        </div>
+        <a href="amarispicehotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="light.jpg" alt="the light hotel">
+        <div class="card-info">
+          <h3>The Light Hotel Penang</h3>
+          <p class="price">RM 305</p>
+          <p class="desc">Sophisticated business hotel with great dining and gym facilities</p>
+        </div>
+        <a href="lighthotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      </div> </div></section>
+
+<section class="section-center">
+  <div class="slider-container">
+
+ <div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span> <span class="fa fa-star"></span> <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">3-Star Luxury Hotels</small>
+  </div>
+    
+      <div class="hotel-slider" id="hotelContainer">
+      
+      <div class="hotel-card">
+        <img src="rainbow.jpg" alt="rainbow paradise beach hotel">
+        <div class="card-info">
+          <h3>Rainbow Paradise Beach</h3>
+          <p class="price">RM 99</p>
+          <p class="desc">Beachfront suites offering great sea views and a large pool</p>
+        </div>
+        <a href="rainbowhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="travelodge.jpg" alt="Travelodge Georgetown">
+        <div class="card-info">
+          <h3>Travelodge Georgetown</h3>
+          <p class="price">RM 145</p>
+          <p class="desc">Clean and trendy hotel located near famous local street food</p>
+        </div>
+        <a href="travelodghotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+
+      </div>
+
+      <div class="hotel-card">
+        <img src="esq.jpg" alt="esq ferringhi hotel">
+        <div class="card-info">
+          <h3>ESQ Ferringhi Hotel</h3>
+          <p class="price">RM 39</p>
+          <p class="desc">Affordable and cozy stay just steps away from the night market</p>
+        </div>
+        <a href="esqhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="ixora.jpg" alt="Ixora Hotel Penang">
+        <div class="card-info">
+          <h3>Ixora Hotel Penang</h3>
+          <p class="price">RM 188</p>
+          <p class="desc">Comfortable business-class hotel located near major shopping malls</p>
+        </div>
+        <a href="ixorahotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      </div> </div>
+</section>
+    
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+ 
+
+</body> 
+</html>

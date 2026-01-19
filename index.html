@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>HOME</title>
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link rel="stylesheet" type/css href="styleee.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+
+<body onclick="playMusic()">
+
+<audio id="bg-music" loop>
+       <source src="song.mp3" type="audio/mpeg">
+   </audio>
+
+ <div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script>
+
+<div class="image-wrapper">
+    <img src="forest.jpeg" class="full-image" alt="Header Image">
+</div><br>
+
+<nav class="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      <span class="brand-name">NovaStay</span> </div>
+
+	<div class="nav-right-side">
+     	 <div class="language-picker">
+       	 <img src="my.jpeg" alt="MY Flag"> <span>MYR | EN</span>
+        <i class="arrow-down"></i>
+      </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+    <div class="nav-auth">
+      <a href="login.html">
+      <button class="btn-login">Log In</button>
+       </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="hero-content-wrapper">
+	<h1 class="hero-slogan">Explore Cities, Rest Easy</h1>
+
+    <div class="search-main-container">
+        <div class="search-tabs">
+            <span class="tab active">All</span>
+            <span class="tab">Hotels</span>
+            <span class="tab">Villa</span>
+        </div>
+        <div class="search-bar-white">
+            <div class="input-section">
+                <label>City, destination, or hotel name</label>
+                <input type="text" placeholder="City, hotel, place to go">
+            </div>
+            <div class="input-section">
+                <label>Check-in & Check-out Dates</label>
+                <input type="text" value="15 Jan 2026 - 16 Jan 2026">
+            </div>
+	    <div class="input-section">
+                <label>Guests and Rooms</label>
+                <input type="text" value="2 Adults(s),0 Child, 1 Room">
+            </div>
+            <button class="purple-search-btn">🔍</button>
+        </div>
+    </div>
+</div>
+
+</nav>
+
+<button id="music-toggle" onclick="toggleMusic()" 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(50,50,50,0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 9999;
+">
+🎵
+</button>
+
+<script>
+
+const music = document.getElementById('bg-music');
+const toggleBtn = document.getElementById('music-toggle');
+
+
+music.volume = 0.3;
+
+
+const musicPlaying = sessionStorage.getItem('musicPlaying');
+if(musicPlaying === 'true'){
+    music.play().catch(()=>{});
+    toggleBtn.innerText = '🎵';
+}else if(musicPlaying === 'false'){
+    music.pause();
+    toggleBtn.innerText = '🔇';
+}
+
+
+document.body.addEventListener('click', function firstClick(){
+    if(!sessionStorage.getItem('musicClicked')){
+        music.play().catch(()=>{});
+        sessionStorage.setItem('musicPlaying', 'true');
+        sessionStorage.setItem('musicClicked', 'true');
+        toggleBtn.innerText = '🎵';
+    }
+    document.body.removeEventListener('click', firstClick);
+});
+
+
+function toggleMusic(){
+    if(music.paused){
+        music.play().catch(()=>{});
+        toggleBtn.innerText = '🎵';
+        sessionStorage.setItem('musicPlaying','true');
+    } else {
+        music.pause();
+        toggleBtn.innerText = '🔇';
+        sessionStorage.setItem('musicPlaying','false');
+    }
+}
+</script>
+
+<div class="hero-slogannn">
+<p><em>TURN YOUR TRAVEL DREAMS INTO REAL BOOKINGS</p></em><br>
+</div>
+
+<div class="video-container">
+<video controls autoplay loop class="video-item" src="video.mp4" type="video/mp4"></video>
+</div>
+
+<div class="des-image">
+  <div class="des-text">
+    <h1 style="font-size:50px">DESTINATION</h1>
+    <button onclick="location.href='destination.html'">CLICK HERE</button>
+  </div>
+</div><br>
+
+
+<div class="book-image">
+  <div class="des-text">
+    <h1 style="font-size:50px">BOOKING</h1>
+    <button onclick="location.href='login.html'">CLICK HERE</button>
+  </div>
+</div><br>
+
+<a href="index.html" id="backToTop">↑ Back to Top</a>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

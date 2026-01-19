@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="styleee.css">
+    <link rel="stylesheet" href="book.css">
+<link rel="icon" type="image/png" href="Nova icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="brand-name">
+<a href="home.html">NovaStay</a></div>
+    </div>
+</nav>
+
+<section class="ticket">
+
+    <div class="ticket-header">
+        <h1>NovaStay E-Ticket</h1>
+        <span class="ticket-status">Payment Successful</span>
+    </div>
+
+    <div class="ticket-body">
+
+        <div class="ticket-row">
+            <span>Booking Reference</span>
+            <strong id="bookingRef"></strong>
+        </div>
+
+        <div class="ticket-row">
+            <span>Hotel</span>
+            <strong id="confirmHotel"></strong>
+        </div>
+
+        <div class="ticket-row">
+            <span>Location</span>
+            <strong id="confirmState"></strong>
+        </div>
+
+        <div class="ticket-row">
+            <span>Stay Dates</span>
+            <strong id="confirmDates"></strong>
+        </div>
+
+        <div class="ticket-row">
+            <span>Payment Method</span>
+            <strong id="confirmMethod"></strong>
+        </div>
+
+        <div class="ticket-divider"></div>
+
+        <div class="ticket-total">
+            <span>Total Paid</span>
+            <strong>RM <span id="confirmPrice"></span></strong>
+	</div>
+
+<button class="ticket-print" onclick="window.print()">
+    Print / Save as PDF
+</button>
+</section>
+
+<script>
+const state = localStorage.getItem("state");
+const hotel = localStorage.getItem("hotelName");
+const dates = localStorage.getItem("dateRange");
+const method = localStorage.getItem("paymentMethod");
+const price = localStorage.getItem("finalPrice");
+
+// Generate booking reference
+const ref = "NST" + Math.floor(100000 + Math.random() * 900000);
+
+// Safety check
+if (!state || !hotel || !dates || !price) {
+    alert("Booking information missing.");
+    window.location.href = "book.html";
+}
+
+// Populate receipt
+document.getElementById("bookingRef").textContent = ref;
+document.getElementById("confirmHotel").textContent = hotel;
+document.getElementById("confirmState").textContent = state.toUpperCase();
+document.getElementById("confirmDates").textContent = dates;
+document.getElementById("confirmMethod").textContent = method;
+document.getElementById("confirmPrice").textContent = price;
+</script>
+
+
+</body>
+</html>
