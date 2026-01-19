@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<title>JOHOR HOTEL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="slider.css" />
+<link rel="icon" type="image/jpeg" href="Nova icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body> 
+
+<nav class="navbar">
+  <div class="nav-container">
+
+   <div class="logo">
+      <span class="brand-name">Nova Stay</span></div>
+
+   <div class="nav-right-side">
+   <div class="language-picker">
+   <img src="my.jpg" alt="My Flag"> <span>MYR | EN</span>
+   <i class="arrow-down"></i>
+  </div>
+
+
+   <ul class="nav-links">
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="About%20Us.html">ABOUT US</a></li>
+      <li><a href="terms.html">TERMS & CONDITIONS</a></li>
+    </ul>
+
+  
+   </div>
+  </div>
+
+</div>
+</nav>
+
+
+<div class="hero-image hero-johor">
+  <div class="hero-text">
+    <h1 style="font-size:80px">Johor Bahru</h1>
+    <p>Enjoy your journey with modern and comfortable accommodations</p>
+  </div>
+</div>
+
+ <div id="datetime-simple"></div>
+
+<script> 
+
+function updateDateTime() {
+  const now = new Date();
+
+  const day = now.getDate();
+  const month = now.toLocaleString('en-US', { month: 'short' });
+  const year = now.getFullYear();
+  const hours = now.getHours().toString().padStart(2,'0');
+  const minutes = now.getMinutes().toString().padStart(2,'0');
+  const seconds = now.getSeconds().toString().padStart(2,'0');
+
+  document.getElementById("datetime-simple").innerText =
+    `📅 ${day} ${month} ${year} | 🕑  ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script> 
+
+
+<section class="section-center">
+  <div class="slider-container">
+    
+<div style="text-align: center; margin-bottom: 20px; font-family: 'Quicksand';">
+  <div style="margin-bottom: 10px;">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span> 
+    <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">5-Star Luxury Hotels</small>
+  </div>
+  
+
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+    
+      <div class="hotel-card">
+        <img src="renaissance.jpg" alt="Renaissance">
+        <div class="card-info">
+          <h3>Renaissance Johor Bahru</h3>
+          <p class="price">RM486</p>
+          <p class="desc">A highly rated 5-star hotel with comfortable rooms.</p>
+        </div>
+        <a href="renaissancehotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="amari.jpg" alt="amari hotel">
+        <div class="card-info">
+          <h3>Amari Johor Bahru</h3>
+          <p class="price">RM451</p>
+          <p class="desc">A modern city hotel with a stunning infinity pool in the heart of Johor Bharu</p>
+        </div>
+       <a href="amarihotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+
+      </div>
+      
+       <div class="hotel-card">
+        <img src="fraserjb.jpg" alt="fraserjb hotel">
+        <div class="card-info">
+          <h3>Fraser Place Puteri Harbour</h3>
+          <p class="price">RM420</p>
+          <p class="desc">Stylish waterfront apartments with beautiful views of the marina</p>
+        </div>
+        <a href="fraserhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="anantara.jpg" alt="anantara hotel">
+        <div class="card-info">
+          <h3>Anantara Desaru Coast</h3>
+          <p class="price">RM950</p>
+          <p class="desc">Luxury villas with private beach access and spa.</p>
+        </div>
+        <a href="anantarahotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div> 
+         </div> 
+
+
+ <div>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span> <span class="fa fa-star"></span> <small style="margin-left: 10px; color: #FFD700; font-weight: bold; font-size: 16px;">3-Star Luxury Hotels</small>
+  </div>
+</div>
+   
+</section>
+
+<section class="section-center">
+  <div class="slider-container">
+    
+
+    <div class="hotel-slider" id="hotelContainer">
+      
+      <div class="hotel-card">
+        <img src="grandhll.jpg" alt="grand hallmark">
+        <div class="card-info">
+          <h3>Grand Hallmark Hotel</h3>
+          <p class="price">RM123</p>
+          <p class="desc">A clean and budget-friendly hotel located in the Molek area</p>
+        </div>
+        <a href="grandhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="prestigo.jpg" alt="prestigo">
+        <div class="card-info">
+          <h3>Prestigo Hotel</h3>
+          <p class="price">RM139</p>
+          <p class="desc">A trendy boutique hotel with unique and creative room designs</p>
+        </div>
+        <a href="prestigohotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="giles.jpg" alt="st. giles hotel">
+        <div class="card-info">
+          <h3>St. Giles Southkey</h3>
+          <p class="price">RM370</p>
+          <p class="desc">A popular hotel directly connected to Mid Valley Southkey Mall</p>
+        </div>
+        <a href="gileshotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      
+       <div class="hotel-card">
+        <img src="atelier.jpg" alt="atelier hotel">
+        <div class="card-info">
+          <h3>Atelier Hotel Johor Bahru</h3>
+          <p class="price">RM157</p>
+          <p class="desc">An artistic boutique hotel with a cozy industrial-chic vibe</p>
+        </div>
+        <a href="atelierhotel.html" class="btn-details" style="text-decoration: none; text-align: center;">View Details</a>
+      </div>
+      </div>
+    
+</section>
+ 
+
+
+</body> 
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+	  <div class="footer-logo-wrapper">
+        <img src="Nova icon.png" alt="NovaStay Logo" class="footer-main-logo">
+    </div>
+            <h2 class="footer-logo">NovaStay</h2>
+            
+            <h3>Payment Partners</h3>
+            <div class="payment-grid">
+                <img src="visa.png" alt="Visa">
+                <img src="card.png" alt="Mastercard">
+                <img src="may.png" alt="Maybank">
+                </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>About NovaStay</h3>
+            <ul>
+                <li><a href="About%20Us.html">About Us</a></li>
+                <li><a href="terms.html">Terms & Condiions</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+</html>
